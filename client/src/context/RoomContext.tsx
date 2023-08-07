@@ -109,7 +109,7 @@ export const RoomProvider: React.FunctionComponent = ({ children }) => {
 
     useEffect(() => {
         const peer = new Peer(userId, {
-            host: "streaming.peerjs.acsdevsandbox.com",
+            host: "https://peerjs.acsdevsandbox.com",
             path: "/",
         });
         setMe(peer);

@@ -22,6 +22,8 @@ interface IMessage {
 }
 
 export const roomHandler = (socket: Socket) => {
+    console.log(socket.data)
+    console.log(socket.request)
     const createRoom = () => {
         const roomId = uuidV4();
         rooms[roomId] = {};

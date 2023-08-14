@@ -26,10 +26,18 @@ const io = new Server(server, {
 io.on("connection", (socket) => {
     console.log("a user connected");
     roomHandler(socket);
+    socket.on("error", (error) => {
+        console.log(`Socket Error: ${error}`)
+    });
     socket.on("disconnect", () => {
         console.log("user disconnected");
     });
 });
+
+io.on("error", (error) => {
+    console.log(`io Error: ${error}`);
+});
+
 
 server.listen(port, () => {
     console.log(`listening on *:${port}`);

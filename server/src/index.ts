@@ -7,19 +7,11 @@ import { roomHandler } from "./room";
 const app = express();
 
 
-const allowedOrigins = ['*'];
-
-const options: cors.CorsOptions = {
-  origin: allowedOrigins
-};
-
-app.use(cors(options));
-
-
 app.get("/health", (_, res) => {
     res.send("Server is running");
 });
 
+app.use(cors);
 
 const port = 8080;
 const server = http.createServer(app);

@@ -13,11 +13,16 @@ server.on("disconnect", (client) => {
 })
 
 server.on("message", (client, message) => {
-    console.log("****************** Message and Client ******************")
-    console.log(message)
-    console.log("****************** from client ******************")
-    console.log(client)
-    console.log("****************** END CLIENT ******************")
+    if (message.src === "test_peer_id" || message.type !== "HEARTBEAT"){
+        console.log("****************** Message and Client ******************")
+        console.log(message)
+        console.log("****************** from client ******************")
+        console.log(client)
+        console.log("****************** END CLIENT ******************")
+    }
+    else {
+        console.log("Message came in but not logging, its either a heartbeat or not from our test camera")
+    }
 
 })
 

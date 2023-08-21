@@ -13,7 +13,7 @@ server.on("disconnect", (client) => {
 })
 
 server.on("message", (client, message) => {
-    console.log(`Message: ${message} Client: ${client}`)
+    console.log(`Message: ${message.toString()} Client: ${client.toString()}`)
 })
 
 server.on('error', (error) => {

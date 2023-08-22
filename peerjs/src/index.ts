@@ -21,7 +21,7 @@ server.on("message", (client, message) => {
         console.log("****************** END CLIENT ******************")
     }
     else {
-        console.log("Message came in but not logging, its either a heartbeat or not from our test camera")
+        console.log(`Message came in from ${message.src} of type ${message.type}`)
     }
 
 })
